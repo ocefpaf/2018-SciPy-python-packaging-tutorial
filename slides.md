@@ -44,7 +44,7 @@ conda skeleton cran my-awesome-pkg
 To use 'conda skeleton', install conda-build.
 ```
 
-# The recipe
+# Recipe sections: `package` and `source`
 
 ```yaml
 {% set version = "1.0.0" %}
@@ -59,7 +59,7 @@ source:
 ```
 
 
-# The recipe
+# Recipe sections: `build` and `requirements`
 
 ```yaml
 build:
@@ -76,7 +76,7 @@ requirements:
 
 ```
 
-# The recipe
+# Recipe sections: `test`
 
 ```yaml
 test:
@@ -87,7 +87,8 @@ test:
 ```
 
 
-# The recipe
+# Recipe sections: `about` and `extra`
+
 
 ```yaml
 about:
@@ -111,9 +112,9 @@ extra:
 
 # Submit the recipes to conda-forge
 
->- check if the recipe was created the latest version of conda-skeleton
->- check conda-forge's [recipe example/instructions](https://github.com/conda-forge/staged-recipes/blob/master/recipes/example/meta.yaml)
 >- submit a PR to [https://github.com/conda-forge/staged-recipes](https://github.com/conda-forge/staged-recipes)
+>- request a review from the stage-recipes team
+>- that's it
 
 
 # What happens next...
@@ -126,9 +127,8 @@ extra:
 
 # Maintaining a package
 
->- the maintainer is not responsible updating, reviewing and merging PRs to the feedstock
->- some of those PRs will be automatic updates to `conda-forge`'s boilerplate CI configuration
->- in the near-future PRs updating the package will also be automatic, reducing the burden on the maintainer.
+>- the maintainer is responsible updating, reviewing and merging PRs to the feedstock
+>- some of those PRs will be automatic making the maintainer life easier
 
 
 # Hands on exercise!
@@ -136,5 +136,5 @@ extra:
 >- install conda-build
 >- choose a package from CRAN or PyPI
 >- run the `conda-skeleton` command for the package
->- "clean" the recipe for conda-forge
+>- adapt the recipe for conda-forge
 >- submit a PR to staged-recipes

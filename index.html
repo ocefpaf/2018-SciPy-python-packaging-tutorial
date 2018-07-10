@@ -131,8 +131,8 @@ conda skeleton cran my-awesome-pkg</code></pre>
 <pre><code>To use &#39;conda skeleton&#39;, install conda-build.</code></pre>
 </div>
 </section>
-<section id="the-recipe" class="slide level1">
-<h1>The recipe</h1>
+<section id="recipe-sections-package-and-source" class="slide level1">
+<h1>Recipe sections: <code>package</code> and <code>source</code></h1>
 <div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">{</span>% set version = &quot;1.0.0&quot; %<span class="kw">}</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="fu">package:</span></a>
@@ -143,8 +143,8 @@ conda skeleton cran my-awesome-pkg</code></pre>
 <a class="sourceLine" id="cb4-8" data-line-number="8">  <span class="fu">url:</span><span class="at"> https://URL/my-awesome-pkg-{{ version }}.tar.gz</span></a>
 <a class="sourceLine" id="cb4-9" data-line-number="9">  <span class="fu">sha256:</span><span class="at"> 410bcd1d6409026fbaa65d9ed33bf6dd8b1e94a499e32168acf</span></a></code></pre></div>
 </section>
-<section id="the-recipe-1" class="slide level1">
-<h1>The recipe</h1>
+<section id="recipe-sections-build-and-requirements" class="slide level1">
+<h1>Recipe sections: <code>build</code> and <code>requirements</code></h1>
 <div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">build:</span></a>
 <a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="fu">number:</span><span class="at"> 0</span></a>
 <a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="fu">noarch:</span><span class="at"> python</span></a>
@@ -157,16 +157,16 @@ conda skeleton cran my-awesome-pkg</code></pre>
 <a class="sourceLine" id="cb5-10" data-line-number="10">  <span class="fu">run:</span></a>
 <a class="sourceLine" id="cb5-11" data-line-number="11">    <span class="kw">-</span> python</a></code></pre></div>
 </section>
-<section id="the-recipe-2" class="slide level1">
-<h1>The recipe</h1>
+<section id="recipe-sections-test" class="slide level1">
+<h1>Recipe sections: <code>test</code></h1>
 <div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu">test:</span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="fu">imports:</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3">    <span class="kw">-</span> my-awesome-pkg</a>
 <a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="fu">commands:</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5">    <span class="kw">-</span> my-awesome-pkg-cli --help</a></code></pre></div>
 </section>
-<section id="the-recipe-3" class="slide level1">
-<h1>The recipe</h1>
+<section id="recipe-sections-about-and-extra" class="slide level1">
+<h1>Recipe sections: <code>about</code> and <code>extra</code></h1>
 <div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">about:</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2">  <span class="fu">home:</span><span class="at"> http://my-awesome-pkg.org/</span></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3">  <span class="fu">license:</span><span class="at"> Public Domain</span></a>
@@ -188,9 +188,9 @@ conda skeleton cran my-awesome-pkg</code></pre>
 <section id="submit-the-recipes-to-conda-forge" class="slide level1">
 <h1>Submit the recipes to conda-forge</h1>
 <ul>
-<li class="fragment">check if the recipe was created the latest version of conda-skeleton</li>
-<li class="fragment">check conda-forge’s <a href="https://github.com/conda-forge/staged-recipes/blob/master/recipes/example/meta.yaml">recipe example/instructions</a></li>
 <li class="fragment">submit a PR to <a href="https://github.com/conda-forge/staged-recipes" class="uri">https://github.com/conda-forge/staged-recipes</a></li>
+<li class="fragment">request a review from the stage-recipes team</li>
+<li class="fragment">that’s it</li>
 </ul>
 </section>
 <section id="what-happens-next" class="slide level1">
@@ -205,9 +205,8 @@ conda skeleton cran my-awesome-pkg</code></pre>
 <section id="maintaining-a-package" class="slide level1">
 <h1>Maintaining a package</h1>
 <ul>
-<li class="fragment">the maintainer is not responsible updating, reviewing and merging PRs to the feedstock</li>
-<li class="fragment">some of those PRs will be automatic updates to <code>conda-forge</code>’s boilerplate CI configuration</li>
-<li class="fragment">in the near-future PRs updating the package will also be automatic, reducing the burden on the maintainer.</li>
+<li class="fragment">the maintainer is responsible updating, reviewing and merging PRs to the feedstock</li>
+<li class="fragment">some of those PRs will be automatic making the maintainer life easier</li>
 </ul>
 </section>
 <section id="hands-on-exercise" class="slide level1">
@@ -216,7 +215,7 @@ conda skeleton cran my-awesome-pkg</code></pre>
 <li class="fragment">install conda-build</li>
 <li class="fragment">choose a package from CRAN or PyPI</li>
 <li class="fragment">run the <code>conda-skeleton</code> command for the package</li>
-<li class="fragment">“clean” the recipe for conda-forge</li>
+<li class="fragment">adapt the recipe for conda-forge</li>
 <li class="fragment">submit a PR to staged-recipes</li>
 </ul>
 </section>
